@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Citizen Grievance AI — Complaint Intelligence Portal</title>
+  <meta name="description"
+    content="AI-powered citizen complaint registration and intelligent department routing system." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ───── Navbar ───── -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <div class="nav-logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+          </svg>
+        </div>
+        <span class="nav-name">Citizen Grievance AI</span>
+      </div>
+      <div class="nav-links">
+        <a href="#" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7" rx="1" />
+            <rect x="14" y="3" width="7" height="7" rx="1" />
+            <rect x="3" y="14" width="7" height="7" rx="1" />
+            <rect x="14" y="14" width="7" height="7" rx="1" />
+          </svg>
+          Dashboard
+        </a>
+        <a href="#" class="nav-link active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="12" y1="18" x2="12" y2="12" />
+            <line x1="9" y1="15" x2="15" y2="15" />
+          </svg>
+          Register
+        </a>
+        <a href="#" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          Track Status
+        </a>
+        <a href="#" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          Help
+        </a>
+      </div>
+      <div class="nav-user">
+        <div class="nav-notif">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+            <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+          </svg>
+          <span class="notif-dot"></span>
+        </div>
+        <div class="nav-avatar">RP</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ───── Page Container ───── -->
+  <div class="page">
+
+    <!-- ───── Stats Overview Strip ───── -->
+    <section class="stats-strip">
+      <div class="stat-card">
+        <div class="stat-icon stat-icon-blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+          </svg>
+        </div>
+        <div class="stat-info">
+          <div class="stat-number">1,247</div>
+          <div class="stat-label">Total Complaints</div>
+        </div>
+        <div class="stat-trend up">↑ 12%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon stat-icon-green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+            <polyline points="22 4 12 14.01 9 11.01" />
+          </svg>
+        </div>
+        <div class="stat-info">
+          <div class="stat-number">938</div>
+          <div class="stat-label">Resolved</div>
+        </div>
+        <div class="stat-badge">75%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon stat-icon-amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+        </div>
+        <div class="stat-info">
+          <div class="stat-number">248</div>
+          <div class="stat-label">Pending</div>
+        </div>
+        <div class="stat-trend down">↓ 5%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon stat-icon-red">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+        </div>
+        <div class="stat-info">
+          <div class="stat-number">61</div>
+          <div class="stat-label">Escalated</div>
+        </div>
+        <div class="stat-badge urgent">Critical</div>
+      </div>
+    </section>
+
+    <!-- ───── Main Content Grid ───── -->
+    <div class="main-grid">
+
+      <!-- LEFT: Registration Form -->
+      <section class="card form-card">
+        <div class="card-head">
+          <div>
+            <h2 class="card-title">Register a Complaint</h2>
+            <p class="card-desc">Describe your issue. AI will auto-detect the department and urgency level.</p>
+          </div>
+          <span class="card-tag">
+            <span class="tag-dot"></span>
+            AI Powered
+          </span>
+        </div>
+
+        <!-- Fake form fields row for realism -->
+        <div class="fake-fields">
+          <div class="fake-field">
+            <label>Full Name</label>
+            <div class="fake-input">Rutuja Patil</div>
+          </div>
+          <div class="fake-field">
+            <label>Ward / Area</label>
+            <div class="fake-input">Ward 14, Sector 22</div>
+          </div>
+          <div class="fake-field">
+            <label>Contact Number</label>
+            <div class="fake-input">+91 98XXX XXXXX</div>
+          </div>
+        </div>
+
+        <!-- Category Quick-Select Presets -->
+        <div class="presets-section">
+          <div class="presets-label">Category — Auto-detect or select a scenario to test:</div>
+          <div class="presets">
+            <button class="preset" data-preset="water_supply">💧 Water Supply</button>
+            <button class="preset" data-preset="garbage">🗑️ Garbage</button>
+            <button class="preset" data-preset="street_light">💡 Street Light</button>
+            <button class="preset" data-preset="potholes">🚧 Road & Potholes</button>
+            <button class="preset" data-preset="power_cut">⚡ Power Cut</button>
+            <button class="preset" data-preset="drainage">🌊 Drainage</button>
+            <button class="preset" data-preset="bus_delay">🚌 Bus Delay</button>
+            <button class="preset" data-preset="application_status">📑 Application Status</button>
+            <button class="preset" data-preset="wrong_item">📦 Wrong Delivery</button>
+            <button class="preset" data-preset="service_delay">⏳ Service Delay</button>
+          </div>
+        </div>
+
+        <!-- Complaint Textarea -->
+        <form id="complaintForm">
+          <label class="textarea-label">Complaint Description <span>*</span></label>
+          <div class="input-wrap">
+            <textarea id="complaintInput" rows="4" placeholder="Describe your issue in detail..." required></textarea>
+            <div class="input-footer">
+              <span class="char-count" id="charCount">0 chars</span>
+              <button type="button" class="btn-clear" id="clearBtn">✕ Clear</button>
+            </div>
+          </div>
+
+          <!-- Fake attachment row -->
+          <div class="attach-row">
+            <button type="button" class="btn-attach">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" />
+              </svg>
+              Attach Photo / Document
+            </button>
+            <span class="attach-hint">Max 5 MB · JPG, PNG, PDF</span>
+          </div>
+
+          <div class="form-actions">
+            <span class="shortcut"><kbd>Ctrl</kbd>+<kbd>Enter</kbd></span>
+            <button type="submit" id="analyzeBtn" class="btn-submit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+              <span class="btn-text">Analyze & Register</span>
+              <span class="spinner" id="btnSpinner"></span>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- RIGHT: Results / Output Panel -->
+      <section class="card results-card" id="resultsSection">
+
+        <!-- Empty State -->
+        <div class="empty-state" id="resultsEmpty">
+          <div class="empty-visual">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+          </div>
+          <h3>No Complaint Analyzed Yet</h3>
+          <p>Write your complaint on the left and click <strong>"Analyze & Register"</strong> to see AI-powered routing
+            results here.</p>
+          <div class="empty-features">
+            <div class="ef"><span class="ef-icon" style="color: var(--orange);"></span> • Auto Department Detection</div>
+            <div class="ef"><span class="ef-icon" style="color: var(--orange);"></span> • Urgency Level Assessment</div>
+            <div class="ef"><span class="ef-icon" style="color: var(--orange);"></span> • Confidence Scoring</div>
+          </div>
+        </div>
+
+        <!-- Filled State -->
+        <div class="results hidden" id="resultsContent">
+
+          <!-- Success Banner -->
+          <div class="success-banner">
+            <div class="success-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+            </div>
+            <div class="success-text">
+              <div class="success-title">Complaint Registered Successfully</div>
+            </div>
+          </div>
+
+          <!-- Routed Department Card -->
+          <div class="dept-route-card">
+            <div class="drc-left">
+              <div class="drc-label">Routed to Department</div>
+              <div class="drc-dept">
+                <span class="dept-icon-lg" id="resultDeptIcon"></span>
+                <span class="dept-name-lg" id="resultDeptName">—</span>
+              </div>
+              <div class="drc-queue" id="resultRoutingQueue">—</div>
+            </div>
+            <div class="drc-right">
+              <span class="urgency-pill" id="resultUrgencyBadge">
+                <span class="urgency-dot"></span>
+                <span id="resultUrgencyName">—</span>
+              </span>
+              <div class="conf-circle" id="resultConfCircle">
+                <svg viewBox="0 0 36 36" class="conf-ring">
+                  <path class="conf-ring-bg"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  <path class="conf-ring-fill" id="confRingFill" stroke-dasharray="0, 100"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                </svg>
+                <span class="conf-pct" id="resultConfidenceVal">—</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons (fake but realistic) -->
+          <div class="action-buttons">
+            <button class="action-btn primary" id="btnRedirect">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Go to Department Portal
+            </button>
+            
+          </div>
+
+          <!-- Diagnostic Details (collapsible feel) -->
+          <details class="details-section" open>
+            <summary class="details-summary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10" />
+                <line x1="12" y1="20" x2="12" y2="4" />
+                <line x1="6" y1="20" x2="6" y2="14" />
+              </svg>
+              AI Analysis Details
+            </summary>
+            <div class="details-body">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <div class="detail-title">Sentiment & Keywords</div>
+                  <div class="sig-row">
+                    <span class="sig-label">Polarity</span>
+                    <span class="sig-val" id="resultSentimentPill">—</span>
+                  </div>
+                  <div class="sig-row">
+                    <span class="sig-label">Matched Cues</span>
+                    <div class="cues" id="resultCuesContainer"></div>
+                  </div>
+                </div>
+                <div class="detail-box">
+                  <div class="detail-title">Category Probabilities</div>
+                  <div class="prob-list" id="probList"></div>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+    </div><!-- /main-grid -->
+  </div><!-- /page -->
+
+  <script src="app.js"></script>
+</body>
+
+</html>

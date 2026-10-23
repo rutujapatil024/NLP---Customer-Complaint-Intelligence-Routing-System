@@ -16,8 +16,8 @@ from predict import predict
 
 app = FastAPI(
     title="Customer Complaint Intelligence & Routing API",
-    description="NLP demonstration for TF-IDF classification and urgency-based routing",
-    version="1.0.0"
+    description="Multilingual Sentence Transformer NLP system for complaint classification and urgency routing",
+    version="2.0.0"
 )
 
 # Enable CORS for local testing flexibility
@@ -48,8 +48,8 @@ def get_info():
     return {
         "status": "active",
         "system": "Indian Citizen & Consumer Complaint Intelligence & Routing Engine",
-        "model_type": "TF-IDF + Logistic Regression Classifier (Balanced)",
-        "urgency_analyzer": "NLTK VADER + Indian Contextual Cues",
+        "model_type": "Multilingual Sentence Transformer (MiniLM) + MLP Neural Classifier",
+        "urgency_analyzer": "NLTK VADER + Contextual Safety Cues",
         "departments": [
             "Water Supply & Drainage",
             "Electricity & Power",
@@ -70,4 +70,6 @@ app.mount("/", StaticFiles(directory=static_dir, html=True), name="static")
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("app:app", host="127.0.0.1", port=8000, reload=True)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("app:app", host="0.0.0.0", port=port)
+
